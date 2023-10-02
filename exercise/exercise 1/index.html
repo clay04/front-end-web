@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Paese JSON Array</h2>
+    <p>Data yang ditulis dengan Array JSON akan diurai menjadi arrar Javascript.</p>
+    <hr>
+    <p id="demo3"></p>
+
+    <script>
+        // array
+        const text = '["Clay Aiken Mangeber Jr", "Lovenia Monalisa Debora Tulong", "Mangeber", "Junior"]';
+
+        // object array javascript
+        const myArr = JSON.parse(text);
+
+        // print console
+        console.log(myArr);
+
+        // view to html
+        document.getElementById("demo3").innerHTML = "My name is"+myArr[0];
+    </script>
+</body>
+</html>
