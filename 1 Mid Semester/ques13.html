@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Javascript Arrays</h2>
+    <p id="demo"></p>
+
+    <script>
+        class car {
+            constructor(brand) {
+                this._carname = brand;
+            }
+            set carname(x) {
+                this._carname = x;
+            }
+            get carname() {
+                return this._carname;
+            }
+        }
+
+        let myCar = new car("Ford");
+        myCar.carname = "Lamborghini";
+        myCar.carname = "Ferarri";
+        myCar.carname = "Koenigsegg";
+        myCar.carname = "Lykan Hypersport";
+        myCar.carname = "Nissan Gt-R50";
+
+        document.getElementById("demo").innerHTML = "My car is " +myCar.carname+".";
+    </script>
+</body>
+</html>
