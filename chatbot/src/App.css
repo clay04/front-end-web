@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Global styles */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #535050;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Layout styles */
+
+.App {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: 100%;
+  background-color: #3a3737;
+  border: none;
+}
+
+.containerbot,
+.darker {
+  padding: 10px;
+  flex-direction: column;
+  position: relative;
+  top: 90%;
+  border: none;
+  border-radius: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.containerbot {
+  margin-left: 200px;
+  margin-right: 700px;
+  background-color: #312e2e;
+  width: 500px;
+}
+
+.darker {
+  margin-left: 700px;
+  margin-right: 200px;
+  background-color: #2d2727;
+  width: 500px;
+}
+
+.containerbot::after,
+.darker::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.containerbot img,
+.darker img {
+  float: left;
+  max-width: 35px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 70%;
+}
+
+.containerbot img.right,
+.darker img.right {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Card styles */
+
+.card {
+  background-color: #3a3737;
+  border: none;
+  border-radius: 1px;
+  transition: margin-left 1s;
+}
+
+.sidebar.active ~ .card,
+.sidebar.active ~ .sticky-header {
+  margin-left: 240px;
+}
+
+.card-header {
+  border: none;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  max-height: 300px;
+  padding-top: 25px;
+}
+
+.card-header.toogle {
+  position: fixed;
+  width: calc(100% - 140px);
+  transition: width 0.3s ease;
+}
+
+.card-footer {
+  border: none;
+  background-color: #3a3737;
+  margin-bottom: 30px;
+}
+
+.head-side {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.sticky-header {
+  position: absolute;
+  background-color: #3a37373a;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(1px);
+  z-index: 2;
+  padding-left: 20;
+}
+
+.card-header p {
+  color: #999;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  text-align: left;
+  color: #fff;
+}
+
+.input-group {
+  max-width: 900px;
+  flex-shrink: 0;
+  margin-left: 240px;
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control {
+  background-color: #3a3737;
+  height: 50px;
+  border-color: #535050;
+  color: #ffffff;
+}
+
+.form-control:hover {
+  background-color: #3a3737;
+  outline: none;
+  color: #ffffff;
+}
+
+.form-control:focus {
+  background-color: #3a3737;
+  color: #ffffff;
+  border-color: #535050;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn {
+  background-color: #3a3737;
+  border-color: #535050;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background-color: #535050;
+  border: none;
+  outline-style: none;
+  border-color: #535050;
+}
+
+.btn:focus {
+  background-color: #535050;
+  border-color: #535050;
+  outline: none;
+  border: none;
+}
+
+.input-group-append {
+  margin-left: -5px;
+}
+
+.btn svg {
+  margin-top: 0;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+#content-chat-feed::-webkit-scrollbar {
+  width: 6px;
+}
+
+#content-chat-feed::-webkit-scrollbar-thumb {
+  background-color: #383e43;
+  border-radius: 4px;
+}
+
+#content-chat-feed::-webkit-scrollbar-track {
+  background-color: #3a3737;
+}
+
+#content-chat-feed {
+  scrollbar-width: thin;
+  scrollbar-color: #6c757d #f5f5f5;
+}
+
+/* Sidebar styles */
+
+.sidebar {
+  width: 240px;
+  background-color: #3a3737;
+  backdrop-filter: blur(1px);
+  position: absolute;
+  height: 88vh;
+  padding: 0;
+  transition: all 1s;
+  left: -100%;
+  z-index: 1;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+ul {
+  padding: 0;
+  z-index: 1;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+ul li a:hover,
+ul li a:active {
+  background: #383e43;
+}
+
+.logo {
+  width: 60px;
+  align-items: center;
+  z-index: 1;
+}
+
+.menu svg {
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-about {
+  background-color: #3a3737;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  padding: 100px;
+  transition: all 1s ease-in;
+  flex: 1;
+}
+
+.card-about .logo {
+  width: 150px;
+  padding-bottom: 20px;
+  margin-left: 50px;
+
+}
+
+.card-about h1{
+  font-size: 5em;
+  padding-bottom: 20px;
+  color: #f5f5f5;
+  text-shadow: 4px 4px 5px #867f7f;
+  width: 500px;
+  margin-left: 50px;
+}
+
+.card-about p {
+  color: #f5f5f5;
+  width: 570px;
+  font-size: 1.3em;
+  margin-left: 50px;
+}
+
+.card-teks {
+  color: #f5f5f5;
+  width: 570px;
+  margin-left: 100px;
+  font-size: 1.1em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Responsive styles */
+
+@media only screen and (max-width: 1200px) {
+  .input-group {
+    margin-left: 10px;
+  }
+
+  .containerbot {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.active ~ .card,
+  .sidebar.active ~ .sticky-header {
+    margin-left: 200px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .input-group,
+  .containerbot,
+
+
+  .sidebar {
+    margin-left: 0;
+    width: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .card-header p {
+    font-size: 14px;
+  }
+
+  .sidebar.active ~ .card,
+  .sidebar.active ~ .sticky-header {
+    margin-left: 0;
+  }
+}
+
+.header-content {
+  margin-left: 20;
+}
