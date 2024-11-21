@@ -143,6 +143,7 @@
   width: 100%;
   backdrop-filter: blur(1px);
   z-index: 2;
+  padding-left: 20;
 }
 
 .card-header p {
@@ -321,6 +322,7 @@ ul li a:active {
   font-family: "Montserrat", sans-serif;
   padding: 100px;
   transition: all 1s ease-in;
+  flex: 1;
 }
 
 .card-about .logo {
@@ -401,4 +403,8 @@ ul li a:active {
   .sidebar.active ~ .sticky-header {
     margin-left: 0;
   }
+}
+
+.header-content {
+  margin-left: 20;
 }

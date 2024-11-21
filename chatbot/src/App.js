@@ -266,16 +266,16 @@ if (input_chat.toLowerCase().includes('jam berapa sekarang') ||
 					<header className='sticky-header'>
 						<div className='card-header'>
 							<span className='header-content'>
-								<MdMenu onClick={() => setShowBar(!showBar)}/>
 								<p> Hermes AI</p>
+								<MdMenu onClick={() => setShowBar(!showBar)}/>
 							</span>
 						</div>
 					</header>
 					< Sidebar show={showBar} />
 					<div className='main'>
 						<Routes>
-							<Route path='/about' exact={true} Component={About} />
-							<Route path='/settings' exact={true} Component={Contact} />
+							<Route path='about' exact={true} Component={About} />
+							<Route path='contact' exact={true} Component={Contact} />
 						</Routes>
 					</div>
 				</Router>
